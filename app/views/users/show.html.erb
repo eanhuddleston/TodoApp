@@ -1,0 +1,13 @@
+<h1><%= "User: #{@user.fname} #{@user.lname}" %></h1>
+
+<h4>Teams</h4>
+<% @user.teams.each do |team| %>
+  <%= link_to team.name, team_url(team) %>
+  <br>
+<% end %>
+
+<h4>Links</h4>
+<ul>
+  <li><%= link_to "All teams", teams_url %></li>
+  <li><%= link_to "All projects", projects_url %></li>
+</ul>
