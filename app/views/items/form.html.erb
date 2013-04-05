@@ -1,0 +1,14 @@
+<%= form_for(@item) do |f| %>
+  <%= f.label :title, "Title:" %>
+  <%= f.text_field :title %>
+  <br>
+  <%= f.label :description, "Description:" %>
+  <%= f.text_field :description %>
+  <br>
+  <%= f.label :completed, "Completed?" %>
+  <%= f.text_field :completed %>
+  <br>
+  <%= f.collection_select :project_id, Project.all, :id, :title %>
+  <br>
+  <%= f.submit %>
+<% end %>

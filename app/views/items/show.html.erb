@@ -1,0 +1,15 @@
+<h2><%= @item.title %></h2>
+
+Project: <%= link_to @item.project.title, project_url(@item.project) %>
+<br>
+<br>
+<%= "Description: #{@item.description}" %>
+<br>
+<br>
+<%= "Completed?: #{@item.completed}" %>
+<br>
+
+<h4>Links</h4>
+<ul>
+  <li><%= link_to "All projects", projects_url %></li>
+</ul>

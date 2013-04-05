@@ -1,0 +1,17 @@
+<h1><%= "Project: #{@project.title}" %></h1>
+
+<%= "Purpose: #{@project.purpose}" %> <br>
+
+<h2> Items: </h2>
+<ul>
+<% @project.items.all.each do |item| %>
+  <li>
+  <%= link_to item.title, item_url(item) %>
+  </li>
+<% end %>
+</ul>
+
+<h4>Links</h4>
+<ul>
+  <li><%= link_to "All projects", projects_url %></li>
+</ul>
