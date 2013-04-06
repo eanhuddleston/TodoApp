@@ -3,6 +3,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def edit
+    @user = User.find(params[:id])
+    render :_form2
+  end
+
   def index
     @users = User.all
   end
@@ -16,7 +21,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to user_path(@user)
     else
-      render :form
+      render :_form
     end
   end
 end

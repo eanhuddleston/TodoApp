@@ -22,9 +22,11 @@
       <%= label_tag "team_membership_ids_#{team.id}", team.name %>
       <br>
     <% end %>
+
+    <%= hidden_field_tag "user[team_ids][]" %>
   </p>
   <p>
-    <%= f.submit %> 
+    <%= f.submit %>
   </p>
 
 <% end %>

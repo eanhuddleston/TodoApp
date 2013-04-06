@@ -1,0 +1,25 @@
+<form action="/users" method="post">
+  <p>
+    <label for="user_fname">First name:</label>
+    <br>
+    <input id="user_fname" name="user[fname]" value=<%=@user.fname%> size="30" type="text">
+  </p>
+  <p>
+    <label for="user_lname">Last name:</label>
+    <br>
+    <input id="user_lname" name="user[lname]" value=<%=@user.lname%> size="30" type="text">
+  </p>
+  <% Team.all.each do |team| %>
+    <p>
+      <input id="team_membership_ids_<%=team.id%>" name="user[team_ids][]" 
+          type="checkbox" 
+          <%= "checked='true'" if @user.team_ids.include?(team.id) %>
+          value="<%=team.id%>">
+      <label for="team_membership_ids_<%=team.id%>"><%=team.name%></label>
+      <br>
+    </p>
+  <% end %>
+  <p>
+    <input name="commit" type="submit" value="Create User">
+  </p>
+</form>

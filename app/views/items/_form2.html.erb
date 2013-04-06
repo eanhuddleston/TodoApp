@@ -1,0 +1,18 @@
+<form action="/items" method="post">
+  <label for="item_title">Title:</label>
+  <input id="item_title" name="item[title]" size="30" type="text">
+  <br>
+  <label for="item_description">Description:</label>
+  <input id="item_description" name="item[description]" size="30" type="text">
+  <br>
+  <label for="item_completed">Completed?</label>
+  <input id="item_completed" name="item[completed]" size="30" type="text">
+  <br>
+
+  <select id="item_project_id" name="item[project_id]">
+    <% Project.all do |proj| %>
+      <option value="<%=proj.id%>">proj.title</option>
+    <% end %>
+  </select>
+
+</form>
