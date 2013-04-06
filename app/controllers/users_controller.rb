@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    render :_form2
+    render :_form2 # REV don't render a partial, render the edit action
   end
 
   def index
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to user_path(@user)
     else
-      render :_form
+      render :_form # REV you should just be referencing the :new action here
     end
   end
 end
